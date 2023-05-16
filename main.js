@@ -90,7 +90,17 @@ async function generatePDF() {
 
     const canvas1 = await html2canvas(clone1, { useCORS: true });
     const imgData1 = canvas1.toDataURL('image/png');
-
+// Resize the image if its height is greater than 800px
+if (canvas1.height > 800) {
+  const aspectRatio1 = canvas1.width / canvas1.height;
+  const resizedWidth1 = 800 * aspectRatio1;
+  const resizedCanvas1 = document.createElement('canvas');
+  resizedCanvas1.width = resizedWidth1;
+  resizedCanvas1.height = 800;
+  const resizedCtx1 = resizedCanvas1.getContext('2d');
+  resizedCtx1.drawImage(canvas1, 0, 0, resizedWidth1, 800);
+  imgData1 = resizedCanvas1.toDataURL('image/png');
+}
     // Only add title for the first page
     if (i == 0) {
       pdf.text(title, 35, 20); // Adjust the y-position of the title

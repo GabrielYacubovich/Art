@@ -92,8 +92,8 @@ p {
 }
 
 .imageFormat{
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 500px;
+  max-height: 370px;
   min-height: 350px;
   padding-left: 100px;
   padding-top: 5px;
