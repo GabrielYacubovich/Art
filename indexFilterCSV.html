@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Filter categories</title>
+    <link rel="icon" href="filter.ico" type="image/x-icon">
+
+    <style>
+        #output {
+            width: 100%;
+            height: 200px;
+        }
+
+        .buttons {
+            border-radius: 15px;
+            margin-top: 10px;
+            padding: 5px 9px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+            background-color: rgb(242, 242, 242);
+            border: 1px black solid;
+            font-family: Arial, Helvetica, sans-serif;
+                        cursor: pointer;
+
+        }
+
+        #csvFile {
+            display: none;
+            /* Hide the file input field */
+        }
+
+        label[for="csvFile"] {
+            /* Style the label as if it were the file input button */
+            display: inline-block;
+            border-radius: 15px;
+            padding: 5px 9px;
+            background-color: rgb(242, 242, 242);
+            border: 1px black solid;
+            cursor: pointer;
+            /* Change the mouse cursor when hovering over the label */
+        }
+        #searchBox {
+            padding:6px;
+            font-size: 13px;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 14px;
+            margin-left: 5px;
+            border: 1px black solid;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding: 75px 100px">
+    <input class="buttons" type="file" id="csvFile" accept=".csv" />
+    <label for="csvFile" class="buttons" style="margin-right:55px">Upload File</label> <input type="text" id="searchBox"
+        placeholder="Enter category" />
+    <button class="buttons" onclick="search()">Filter</button>
+    <textarea style="border-radius: 14px;" id="output"></textarea>
+    <button class="buttons" onclick="copyText()">Copy</button>
+</div>
+    <script>
+        function parseCSV(text) {
+            let lines = text.split('\n');
+            let data = [];
+            for (let line of lines) {
+                // Skip lines starting with "@"
+                if (line.startsWith('@')) {
+                    continue;
+                }
+                // Remove trailing comma if present
+                line = line.replace(/,\s*$/, "");
+                let row = line.split(',');
+                // Do not convert "&#x2c" into comma 
+                // Do not convert "%nl%" 
+                data.push(row);
+            }
+            return data;
+        }
+
+        function downloadFile(data, filename) {
+            let blob = new Blob([data], { type: 'text/csv' });
+            let link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function search() {
+            let file = document.getElementById('csvFile').files[0];
+            if (!file) {
+                alert('Please select a file.');
+                return;
+            }
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                let data = parseCSV(e.target.result);
+                let searchValue = document.getElementById('searchBox').value.trim();
+                let results = data.filter(row => {
+                    let categories = row[row.length - 1].split(';');
+                    return categories.some(cat => cat.trim() === searchValue);
+                });
+                // Add trailing comma to each line in output and an extra line break between cases
+                let output = results.map(row => row.join(',') + ',').join('\n\n') + '\n' + '\n';
+                document.getElementById('output').value = output;
+
+                // Download files
+                downloadFile(e.target.result, "Security copy of " + file.name);
+                downloadFile(output, "Filter.csv");
+
+                console.log('Search completed.');
+            };
+            reader.onerror = function (e) {
+                console.error('Error reading file:', e);
+            };
+            console.log('Starting file read.');
+            reader.readAsText(file);
+        }
+        function copyText() {
+            let output = document.getElementById('output');
+            output.select();
+            document.execCommand('copy');
+        }
+
+    </script>
+</body>
+
+</html>

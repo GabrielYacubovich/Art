@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="encoder.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Format Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        textarea,
+        .output-box {
+            width: 100%;
+            height: 150px;
+            resize: none;
+            width: 90%;
+            margin-bottom: 20px;
+            border: 1px solid bla;
+            border-radius: 6px;
+        }
+
+        .output-box {
+            width: 100%;
+            padding: 5px;
+            width: 90%;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            border-radius: 6px;
+
+
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 5px;
+            width: 90%;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid gray;
+            border-radius: 6px;
+
+        }
+
+        button {
+            margin: 10px 0;
+        }
+
+        .header1 {
+            color: rgb(72, 42, 42);
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .header2 {
+            color: rgb(51, 42, 73);
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: red;
+            width: 100%;
+            margin-bottom: 20px;
+            width: 90%;
+        }
+
+        .encodeButton {
+            border-radius: 15px;
+            margin-top: 0px;
+            margin-bottom: 40px;
+            padding: 5px 15px;
+            margin-right: 10px;
+            background-color: rgb(49, 50, 54);
+            border: solid 1px rgb(49, 50, 54);
+            color: white;
+            background-image: linear-gradient(to right, #780206 0%, #061161 51%, #780206 100%);
+            text-align: center;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+        }
+
+        .encodeButton:hover {
+            background-color: rgb(234, 234, 234);
+            color: white;
+            background-position: right center;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .form-container label {
+            margin-right: 10px;
+            margin-left: 50px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            margin-bottom: 20px;
+            margin-right: 50px;
+            width: 100%;
+            min-width: 100px;
+        }
+
+        .csvResults {
+            border: red 4px double;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header1">Create new case</h1>
+    <div class="divider"></div>
+
+    <label for="name">Name:</label>
+    <input type="text" class="input-field" id="name" name="name">
+    <label for="year">Year:</label>
+    <input type="text" class="input-field" id="year" name="year">
+    <label for="image">Image:</label>
+    <input type="text" class="input-field" id="image" name="image">
+    <label for="size">Size:</label>
+    <input type="text" class="input-field" id="size" name="size">
+    <label for="price">Price:</label>
+    <input type="text" class="input-field" id="price" name="price">
+    <label for="categories">Categories:</label>
+    <input type="text" class="input-field" id="categories" name="categories">
+
+    <button class="encodeButton" onclick="addNewCase()">Create</button>
+    <h2 class="header2">Format Converter</h2>
+    <div class="divider"></div>
+    <p style="font-size: 12px; line-height: 16px; margin-bottom: 20px; color: rgb(69, 69, 69)"><b>Syntax
+            example:</b><br>
+        Naturaleza Muerta,<br>
+        1984,<br>
+        "imagen - src",<br>
+        120*30 cm,<br>
+        430$,<br>
+        Oil;Portrait;Abstract
+        JavaScript;Objects;Methods,<br></p>
+    <label for="inputFormatA"><b>Input your code:</b></label>
+    <textarea class="input-field" id="inputFormatA"></textarea>
+    <button class="encodeButton" onclick="convert()">Encode</button>
+    <label for="newCaseOutput"><b>New Case Output:</b></label>
+    <textarea class="output-box" id="newCaseOutput" readonly class="output-box"></textarea>
+    <div style="width: 100%;">
+        <button class="encodeButton" style=" right: 10px; bottom: 10px; float:left; margin-left:50px"
+            onclick="copyToClipboard()">Copy</button>
+
+        <button class="encodeButton" style="float:right; margin-right:50px" onclick="clearOutput()">Clear
+            Output</button>
+    </div>
+
+    <label for="csvContent"><b>CSV Content:</b></label>
+    <textarea class="input-field csvResults" id="csvContent"></textarea>
+    <button class="encodeButton" onclick="addToCSV()">Download CSV</button>
+
+
+    <script>
+        let csvContent = ""; // Store the CSV content
+        function encodeFormatAtoB(input) {
+            const endsWithComma = input.endsWith(",");
+            const normalizedInput = input.replace(/(\r\n|\n|\r)/g, '%nl%');
+            const encodedCommas = normalizedInput.replace(/,/g, '&#x2c');
+            const encoded = encodedCommas.replace(/&#x2c%nl%/g, ',');
+            return endsWithComma ? encoded.slice(0, -5) + ",\n" : encoded;
+        }
+        function convert() {
+            const inputFormatA = document.getElementById("inputFormatA");
+            const outputFormatB = document.getElementById("newCaseOutput");
+            const encodedText = encodeFormatAtoB(inputFormatA.value);
+            outputFormatB.value += encodedText + '\n';
+            // Update the CSV content
+            csvContent += encodedText;
+            // Clear the content from the "Input your code" box
+            inputFormatA.value = "";
+        }
+
+        function clearOutput() {
+            const outputFormatB = document.getElementById("newCaseOutput");
+            outputFormatB.value = "";
+        }
+        function copyToClipboard() {
+            const outputFormatB = document.getElementById("newCaseOutput");
+            outputFormatB.select();
+            document.execCommand("copy");
+            
+        }
+
+
+        async function addToCSV() {
+            const csvContentInput = document.getElementById("csvContent");
+            const newContent = csvContentInput.value.trim();
+            // Fetch the existing content from the CSV file
+            let response = await fetch('art.csv');
+            let existingContent = await response.text();
+            // Append the new content to the existing content
+            csvContent = existingContent;
+            if (newContent.length > 0) {
+                csvContent += newContent + '\n';
+                csvContentInput.value = "";
+                // Provide the updated content for download
+                const csvData = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
+                const link = document.createElement('a');
+                link.setAttribute('href', csvData);
+                link.setAttribute('download', 'art.csv');
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+        function addNewCase() {
+            const name = document.getElementById("name");
+            const year = document.getElementById("year");
+            const image = document.getElementById("image");
+            const size = document.getElementById("size");
+            const price = document.getElementById("price");
+            const categories = document.getElementById("categories");
+            const newCaseOutput = document.getElementById("newCaseOutput");
+            const caseInput = `${name.value},\n${year.value},\n${image.value},\n${size.value},\n${price.value},\n${categories.value},\n`;
+            const encodedCase = encodeFormatAtoB(caseInput);
+            newCaseOutput.value += encodedCase + '\n\n';
+            csvContent += encodedCase;
+            // Clear input fields after adding
+            name.value = "";
+            year.value = "";
+            image.value = "";
+            size.value = "";
+            price.value = "";
+            categories.value = "";
+        }
+    </script>
+</body>
+
+</html>

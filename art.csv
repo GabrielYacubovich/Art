@@ -1,0 +1,36 @@
+title, year, image, size, price, categories
+@ %nl% does as <br> @ opening line comments  &#x2c is comma
+@
+@ if a category appears duplicate, check the extra spaces
+
+111Pajaros&#x2c de Escher 1,1972,https://i.ibb.co/dQvGQSy/LW308.jpg,10cm*10cm,100€,Surrealism;Acuarela,
+
+11Naturaleza Muerta,1984, https://i.ibb.co/LSfRk55/LW331.jpg,120*30 cm,430$,Oil;Portrait,
+
+1Danza de Escher 1, 1952, https://i.ibb.co/LSfRk55/LW331.jpg, 30cm*70cm, 500€,Acuarela;oil,
+
+Pajaros de Escher 1, 1972, https://i.ibb.co/dQvGQSy/LW308.jpg, 10cm*10cm, 100€,Surrealism;Acuarela,
+
+1Algo de Escher 1, 1922, https://i.ibb.co/Kr5fRZ0/LW348.jpg, 30cm*20cm, 300€,Acuarela;Óleo,
+
+Starry Night by Van Gogh, 1889, https://i.ibb.co/dQvGQSy/LW308.jpg, 73.7cm*92.1cm, 1000€,Surrealism;Óleo,
+
+The Persistence of Memory by Dali, 1931, https://i.ibb.co/dQvGQSy/LW308.jpg, 24cm*33cm, 1200€,Surrealism;Óleo,
+
+Danza de Escher 2, 1952, https://i.ibb.co/dQvGQSy/LW308.jpg, 30cm*70cm, 500€,Acuarela2;oil2,
+
+Pajaros de Escher 2, 1972, https://i.ibb.co/dQvGQSy/LW308.jpg, 10cm*10cm, 100€,Surrealism2;Acuarela2,
+
+Algo de Escher 2, 1922, https://i.ibb.co/Kr5fRZ0/LW348.jpg, 30cm*20cm, 300€,Acuarela2;Óleo2,
+
+Starry Night by Van Gogh , 1889, https://i.ibb.co/dQvGQSy/LW308.jpg, 73.7cm*92.1cm, 1000€,Surrealism2;Óleo2,
+
+The Persistence of Memory by Dali , 1931, https://i.ibb.co/dQvGQSy/LW308.jpg, 24cm*33cm, 1200€,Surrealism2;Óleo2,
+
+title,year,image,size,price,categories
+
+11Naturaleza Muerta,1984,https://i.ibb.co/LSfRk55/LW331.jpg,120*30 cm,430$,Oil;Portrait,
+
+1Danza de Escher 1,1952,https://i.ibb.co/LSfRk55/LW331.jpg,30cm*70cm,500€,Acuarela;oil,
+
+Pajaros de Escher 1,1972,https://i.ibb.co/dQvGQSy/LW308.jpg,10cm*10cm,100€,Surrealism;Acuarela,

@@ -1,0 +1,394 @@
+﻿body {
+  margin: 0 !important;
+}
+pre {
+  position: relative;
+  font-size: 14px;
+  border-radius: 7px;
+  margin-left: 100px !important;
+  margin-right: 100px !important;
+  padding-top: 5px !important;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  max-width: 100%;             /* Set the max-width of the content */
+  
+}
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.image-popup img {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.image-popup button {
+  position: absolute;
+  max-height: 30px;
+  padding: 5px 10px;
+  background-color: rgb(242, 242, 242);
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 1px black solid;
+}
+
+.image-popup .closeButton {
+  top: 20px;
+  right: 30px;
+}
+
+.image-popup .buttonNext {
+  bottom: 20px;
+  right: 30px;
+}
+
+.image-popup .buttonPrevious {
+  bottom: 20px;
+  left: 30px;
+}
+
+#dropdown {
+  display: none;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #f1f1f1;
+  font-size: 16px;
+}
+#art-container {
+  padding-top: 250px;
+  padding-bottom:40px;
+}
+p {
+  padding-left: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 50px;
+}
+.main-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+   
+}
+.case-container {
+  page-break-after: always;
+}
+
+.imageFormat{
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 350px;
+  padding-left: 100px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  padding-left: 102px;
+  margin: 0px !important;
+}
+
+.year, 
+.size,
+.price {
+  font-size: 11px;
+  line-height: 13px;
+  color:gray;
+  margin:0px;
+  padding:0px 102px
+}
+.year {
+  padding-top: 10px;
+
+}
+.price {
+  padding-bottom: 80px;
+}
+.searchbar {
+  padding-left: 100px;
+  margin-right: 25px;
+}
+.searchInput {
+padding: 5.5px;
+border: 1px black solid;
+width: 200px;
+margin-right:10px;
+border-radius: 15px;
+}
+
+.divider,
+.divider2,
+.divider3,
+.divider4 {
+  margin: 7px 100px;
+  height: 2px;
+  background-color: red;
+}
+
+.divider2 {
+  width: calc(100% - 240px);
+}
+
+.divider3 {
+  width: calc(100% - 270px);
+  margin-bottom: 20px;
+}
+
+.divider4 {
+  width: calc(100% - 200px);
+  margin: 20px 90px;
+}
+
+#categoryFilter {
+  margin-right: 85px;
+  float:top;
+  float:right;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 22%;
+  margin-top: 18px; 
+  margin-bottom: 18px; 
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2px 4px;
+}
+
+.resetButtonBottom {
+  border-radius: 15px;
+  display: block;
+  
+  padding: 5px 9px;
+  margin-bottom: 20px;
+  float:left;
+  border: 1px black solid;
+  background-color: rgb(242, 242, 242);
+}
+
+.pdfButton {
+  border-radius: 15px;
+  padding: 5px 9px;
+  background-color: rgb(242, 242, 242);
+  border: 1px black solid;
+}
+
+.resetButtonBottom:hover {
+  background-color: rgb(255, 255, 255); 
+}
+.pdfButton:hover {
+  background-color: rgb(255, 255, 255); 
+  color:red
+}
+
+.resetButton {
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 5px 9px;
+  margin-right: 10px;
+  background-color: rgb(242, 242, 242);
+  border: 1px black solid;
+}
+
+.resetButton:hover {
+  background-color: rgb(255, 255, 255); 
+
+}
+
+.buttons-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-wrapper {
+  width: 100%;
+  z-index: 10; /* Give it a higher z-index value to place it on top of the other elements */
+  position: fixed ;
+  background-color: #ffffff;
+  padding:0px 0px 0px;
+}
+
+.results {
+  margin-left: 5px; 
+  font-size: 13px; 
+  color: rgb(103, 103, 103);
+  padding-top: 0px !important;
+  
+}
+.personalDetails {
+font-size: 12px;
+line-height: 17px;
+margin-bottom: 15px;
+}
+@media screen and (max-width: 1000px) {
+#categoryFilter {
+width: 18%;  }
+}
+
+@media screen and (max-width: 950px) {
+  #categoryFilter {
+    display: none;
+  }
+
+.resetButton{
+  font-size: 12px !important;
+}
+}
+@media screen and (max-width: 750px) {
+  #categoryFilter,
+  .encodeButton {
+    display: none;
+  }
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    margin-top: 35px;
+    padding-top: 0px !important;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .title-wrapper {
+       padding: 0px 0px 0px;
+}
+
+  }
+@media screen and (max-width: 600px) {
+  #art-container {
+    padding-top: 0px;
+    padding-bottom:40px;
+    max-width:90%;
+    padding-left: 0x;
+  }
+  .year, 
+.size,
+.price {
+    padding-left:20px;
+    
+}
+.price {
+  padding-bottom:50px;
+  
+}
+  .personalDetails {
+    padding-left: 10px; 
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 15px;
+    }
+.imageFormat {
+  
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 5px;
+  cursor: pointer;
+  min-height: 0px;
+}
+  #categoryFilter {
+    display: none;
+  }
+  .searchbar {
+    padding-left: 10px;
+    margin-right: 20px;
+    
+  }
+  .main-title {
+    font-size: 32px;
+    padding-left: 10px;
+    margin-right: 20px;
+  }
+  .dividerMobile{
+    height: 2px;
+  background-color: red;
+  margin:10px 30px 10px 10px ;
+  
+  }
+  .dividerMobile1{
+    height: 2px;
+  background-color: red;
+  margin:10px 50px 10px 10px ;
+  
+  }
+  
+  .dividerMobile2{
+    height: 2px;
+  background-color: red;
+  margin:10px 70px 10px 10px ;
+  
+  }
+  .divider,
+  .divider2,
+  .divider3,
+  .divider4,
+   .encodeButton{
+    display: none;
+  }
+   
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 0px !important;    
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+  
+  pre {
+    
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    
+  }
+ 
+
+  .searchInput{
+    font-size: 12px;
+    padding: 4px;
+    width: 150px;
+  }
+  .pdfButton {
+    display: none;
+  }
+  .buttonsBottomDiv {
+    width: 100% !important;
+    margin-left: 20px;
+  }
+  .resetButtonBottom{
+  float:left;
+  margin-top: 15px;
+  font-size: 12px !important;
+  
+  }
+  .title-wrapper{
+    position: relative  ;
+    padding: 0px 8px 10px;
+    width: 95%;
+
+  }
+  .results {
+    padding-left: 0px;
+  }
+  .resetButton {
+    display: none;
+  }
+}

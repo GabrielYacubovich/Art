@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="file" id="image" name="image">
+
+<script>
+document.getElementById('image').onchange = function(evt) {
+    let files = evt.target.files; 
+    let reader = new FileReader();
+    reader.onload = function(e) {
+        let img = new Image();
+        img.onload = function() {
+            let width = img.width;
+            let height = img.height;
+            let canvas = document.createElement('canvas');
+            let ctx = canvas.getContext('2d');
+
+            canvas.width = width;
+            canvas.height = height;
+            ctx.drawImage(img, 0, 0, width, height);
+            
+            let compressedDataUrl = canvas.toDataURL('image/jpeg', 0.5);
+            
+            let link = document.createElement('a');
+            let originalFilename = files[0].name.split('.').slice(0, -1).join('.');
+            link.download = originalFilename + '_compressed.jpg';
+            link.href = compressedDataUrl;
+            link.click();
+        }
+        img.src = e.target.result;
+    }
+    reader.readAsDataURL(files[0]);
+}
+</script>
+
+</body>
+</html>
