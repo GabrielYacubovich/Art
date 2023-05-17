@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Art Gallery V5
+<title>Art Tool
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,6 +27,8 @@
       <input class="searchInput" type="text" id="searchInput" placeholder="Buscar...">
 
       <button class="resetButton" id="resetButton">Nueva búsqueda</button><button class="pdfButton"  id="generatePDFButton">Generar PDF</button>
+      <button class="pdfButton" onclick="window.location.href='indexWeb.html';">Web</button>
+
       <select id="categoryFilter" multiple>
         <!-- Categories will be populated dynamically -->
       </select>
@@ -48,11 +50,13 @@
     <div class="buttonsBottomDiv" style="width: calc(100% - 200px);
     ;">
     <div class="personalDetails">
-      <b>Contacto exposiciones:</b> email@emai.com <br>
-      <b>Contacto compra:</b> email@emai.com <br>
+      <b>Contacto:</b> email@email.com <br>
       <b>Web: </b>www.ejemplo.com <br>
+      <b>Art works images under license</b><br>
 
-    </div>     
+
+    </div>  
+       
   </div>
     <script>
     // Attach the jsPDF instance to the window object
