@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<title>Art Tool
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="title-wrapper">
+    
+    <p class="main-title">Art Gallery.</p>
+    <div class="dividerMobile"></div>
+    <div class="dividerMobile1"></div>
+    <div class="dividerMobile2"></div>
+    <div class="divider"></div>
+    <div class="divider2"></div>
+    <div class="divider3"></div>
+    <div class="searchbar">
+      <input class="searchInput" type="text" id="searchInput" placeholder="Buscar...">
+
+      <button class="resetButton" id="resetButton">Nueva búsqueda</button><button class="pdfButton"  id="generatePDFButton">Generar PDF</button>
+      <button class="pdfButton" onclick="window.location.href='indexWeb.html';">Web</button>
+
+      <select id="categoryFilter" multiple>
+        <!-- Categories will be populated dynamically -->
+      </select>
+    </div>
+
+    <!-- Can use this div to add content between the features and the code results -->
+    <div style="margin-left: 104px; margin-right: 100px;font-size: 13px;"></div>
+    <div>
+      <p class="results" id="resultsCount"></p>
+    </div>
+  </div>
+  <div id="art-container"></div>
+
+  <div class="buttons-wrapper">
+    <div class="buttonsBottomDiv" style="width: calc(100% - 200px);
+    ;"></div>
+
+    <div class="divider4"></div>
+    <div class="buttonsBottomDiv" style="width: calc(100% - 200px);
+    ;">
+    <div class="personalDetails">
+      <b>Contacto:</b> email@email.com <br>
+      <b>Web: </b>www.ejemplo.com <br>
+      <b>Art works images under license</b><br>
+
+
+    </div>  
+       
+  </div>
+    <script>
+    // Attach the jsPDF instance to the window object
+    window.jsPDF = window.jspdf.jsPDF;
+  </script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
+

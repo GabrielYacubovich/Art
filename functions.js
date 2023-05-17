@@ -153,12 +153,17 @@ function createArtDivs(visibleArt, container) {
   visibleArt.forEach((art, index) => {
     const artDiv = document.createElement('div');
 
+    // Conditionally generate the year, size, and price lines
+    let yearLine = art.year ? `<p class="year"><span style="color:black">Año:</span> ${art.year}</p>` : '';
+    let sizeLine = art.size ? `<p class="size"><span style="color:black">Medidas:</span> ${art.size}</p>` : '';
+    let priceLine = art.price ? `<p class="price"><span style="color:black">Precio:</span> ${art.price}</p>` : '';
+
     artDiv.innerHTML = ` 
     <div>
       <h3 class="title" data-categories="${art.categories.join(';')}">${art.title}</h3>
-      <p class="year"><span style="color:black">Año:</span> ${art.year}</p>
-      <p class="size"><span style="color:black">Medidas:</span> ${art.size}</p>
-      <p class="price"><span style="color:black">Precio:</span> ${art.price}</p>
+      ${yearLine}
+      ${sizeLine}
+      ${priceLine}
     </div>
     `;
 
@@ -204,6 +209,12 @@ function createArtDivs(visibleArt, container) {
     images = Array.from(document.querySelectorAll(".imageFormat"));
   });
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Call createArtDivs function here with the appropriate parameters
+  // createArtDivs(visibleArt, container);
+});
+
 
 
 function moveToImage(direction) {

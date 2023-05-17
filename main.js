@@ -56,27 +56,27 @@ async function generatePDF() {
 
   let paddingFromTop = 30;
   let marginRight = 13; // Adjust the right margin here (in pixels)
-  let scalePercentage = 1; // if browser/screen width change, need to correct/
+  let scalePercentage = 2; // if browser/screen width change, need to correct/
   const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if (windowWidth > 1700) {
-    scalePercentage = 2; // Adjust the scale percentage as per your requirement
+    scalePercentage = 1.8; // Adjust the scale percentage as per your requirement
   }
     else if (windowWidth > 1500) {
-    scalePercentage = 1.7; // Adjust the scale percentage as per your requirement
+    scalePercentage = 2.1; // Adjust the scale percentage as per your requirement
   } else if (windowWidth > 1300) {
-    scalePercentage = 1.5; // Adjust the scale percentage as per your requirement
+    scalePercentage = 2; // Adjust the scale percentage as per your requirement
   }
     else if (windowWidth > 1100) {
-    scalePercentage = 1.3; // Adjust the scale percentage as per your requirement
+    scalePercentage = 1.7; // Adjust the scale percentage as per your requirement
   }
   else if (windowWidth > 900) {
-    scalePercentage = 1.1; // Adjust the scale percentage as per your requirement
+    scalePercentage = 1.4; // Adjust the scale percentage as per your requirement
   }
   else if (windowWidth > 700) {
-    scalePercentage = 0.9; // Adjust the scale percentage as per your requirement
+    scalePercentage = 1.1; // Adjust the scale percentage as per your requirement
   }
   else if (windowWidth > 500) {
-    scalePercentage = 0.7; // Adjust the scale percentage as per your requirement
+    scalePercentage = 0.9; // Adjust the scale percentage as per your requirement
   }
   for (let i = 0; i < artPieces.length; i += 2) {
     let clone1 = artPieces[i].cloneNode(true);

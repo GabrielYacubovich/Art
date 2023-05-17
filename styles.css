@@ -70,7 +70,7 @@ pre {
   font-size: 16px;
 }
 #art-container {
-  padding-top: 250px;
+  padding-top: 215px;
   padding-bottom:40px;
 }
 p {
@@ -85,16 +85,15 @@ p {
   font-size: 40px;
   padding-top: 0px;
   margin-bottom: 10px;
-   
+  line-height: 28px; 
 }
 .case-container {
   page-break-after: always;
 }
 
 .imageFormat{
-  max-width: 500px;
-  max-height: 370px;
-  min-height: 350px;
+  max-width: 400px;
+  max-height: 300px;
   padding-left: 100px;
   padding-top: 5px;
   cursor: pointer;
@@ -149,12 +148,12 @@ border-radius: 15px;
 
 .divider3 {
   width: calc(100% - 270px);
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .divider4 {
   width: calc(100% - 200px);
-  margin: 20px 90px;
+  margin: 14px 90px 7px;
 }
 
 #categoryFilter {
@@ -231,7 +230,7 @@ border-radius: 15px;
 }
 
 .results {
-  margin-left: 5px; 
+  margin-left: 05px; 
   font-size: 13px; 
   color: rgb(103, 103, 103);
   padding-top: 0px !important;
@@ -240,7 +239,7 @@ border-radius: 15px;
 .personalDetails {
 font-size: 12px;
 line-height: 17px;
-margin-bottom: 15px;
+margin-bottom: 7px;
 }
 @media screen and (max-width: 1000px) {
 #categoryFilter {
@@ -263,7 +262,7 @@ width: 18%;  }
   }
   .title {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
+    font-size: 20px;
     margin-top: 35px;
     padding-top: 0px !important;
     padding-left: 100px;
@@ -274,6 +273,12 @@ width: 18%;  }
 }
 
   }
+  @media screen and (max-width: 700px) {
+.pdfButton{
+  display: none;
+}
+}
+
 @media screen and (max-width: 600px) {
   #art-container {
     padding-top: 0px;
@@ -298,12 +303,13 @@ width: 18%;  }
     margin-bottom: 15px;
     }
 .imageFormat {
-  
+  max-width: 95%;
   padding-left: 20px;
   padding-right: 10px;
   padding-top: 5px;
   cursor: pointer;
   min-height: 0px;
+  
 }
   #categoryFilter {
     display: none;
@@ -347,7 +353,7 @@ width: 18%;  }
    
   .title {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
+    font-size: 20px;
     padding-top: 0px !important;    
     padding-left: 20px;
     padding-right: 30px;
@@ -386,7 +392,7 @@ width: 18%;  }
 
   }
   .results {
-    padding-left: 0px;
+    padding-left: 10px;
   }
   .resetButton {
     display: none;

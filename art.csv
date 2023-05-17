@@ -3,33 +3,32 @@ title, year, image, size, price, categories
 @
 @ if a category appears duplicate, check the extra spaces
 
-111Pajaros&#x2c de Escher 1,1972,https://i.ibb.co/dQvGQSy/LW308.jpg,10cm*10cm,100€,Surrealism;Acuarela,
 
-11Naturaleza Muerta,1984, https://i.ibb.co/LSfRk55/LW331.jpg,120*30 cm,430$,Oil;Portrait,
+111Pajaros&#x2c de Escher 1,1972,https://raw.githubusercontent.com/GabrielYacubovich/Art/main/_MG_4877_compressed.jpg,10cm*10cm,100€,Surrealism;Acuarela,
 
-1Danza de Escher 1, 1952, https://i.ibb.co/LSfRk55/LW331.jpg, 30cm*70cm, 500€,Acuarela;oil,
+Dibujo 11Naturaleza Muerta,1984, https://i.ibb.co/LSfRk55/LW331.jpg,120*30 cm,430$,Oil;Portrait,
 
-Pajaros de Escher 1, 1972, https://i.ibb.co/dQvGQSy/LW308.jpg, 10cm*10cm, 100€,Surrealism;Acuarela,
+Lienzo 1Danza de Escher 1, 1952, https://i.ibb.co/LSfRk55/LW331.jpg, 30cm*70cm, 500€,Acuarela;oil,
 
-1Algo de Escher 1, 1922, https://i.ibb.co/Kr5fRZ0/LW348.jpg, 30cm*20cm, 300€,Acuarela;Óleo,
+Lienzo Pajaros de Escher 1, 1972, https://i.ibb.co/dQvGQSy/LW308.jpg, 10cm*10cm, 100€,Surrealism;Acuarela,
 
-Starry Night by Van Gogh, 1889, https://i.ibb.co/dQvGQSy/LW308.jpg, 73.7cm*92.1cm, 1000€,Surrealism;Óleo,
+Lienzo 1Algo de Escher 1, 1922, https://i.ibb.co/Kr5fRZ0/LW348.jpg, 30cm*20cm, 300€,Acuarela;Óleo,
 
-The Persistence of Memory by Dali, 1931, https://i.ibb.co/dQvGQSy/LW308.jpg, 24cm*33cm, 1200€,Surrealism;Óleo,
+Dibujo Starry Night by Van Gogh, 1889, https://i.ibb.co/dQvGQSy/LW308.jpg, 73.7cm*92.1cm, 1000€,Surrealism;Óleo,
 
-Danza de Escher 2, 1952, https://i.ibb.co/dQvGQSy/LW308.jpg, 30cm*70cm, 500€,Acuarela2;oil2,
+Dibujo The Persistence of Memory by Dali, 1931, https://i.ibb.co/dQvGQSy/LW308.jpg, 24cm*33cm, 1200€,Surrealism;Óleo,
+
+Dibujo Danza de Escher 2, 1952, https://i.ibb.co/dQvGQSy/LW308.jpg, 30cm*70cm, 500€,Acuarela2;oil2,
 
 Pajaros de Escher 2, 1972, https://i.ibb.co/dQvGQSy/LW308.jpg, 10cm*10cm, 100€,Surrealism2;Acuarela2,
 
 Algo de Escher 2, 1922, https://i.ibb.co/Kr5fRZ0/LW348.jpg, 30cm*20cm, 300€,Acuarela2;Óleo2,
 
-Starry Night by Van Gogh , 1889, https://i.ibb.co/dQvGQSy/LW308.jpg, 73.7cm*92.1cm, 1000€,Surrealism2;Óleo2,
+Lienzo Starry Night by Van Gogh , 1889, https://i.ibb.co/dQvGQSy/LW308.jpg, 73.7cm*92.1cm, 1000€,Surrealism2;Óleo2,
 
 The Persistence of Memory by Dali , 1931, https://i.ibb.co/dQvGQSy/LW308.jpg, 24cm*33cm, 1200€,Surrealism2;Óleo2,
 
-title,year,image,size,price,categories
-
-11Naturaleza Muerta,1984,https://i.ibb.co/LSfRk55/LW331.jpg,120*30 cm,430$,Oil;Portrait,
+Lienzo 11Naturaleza Muerta,1984,https://i.ibb.co/LSfRk55/LW331.jpg,120*30 cm,430$,Oil;Portrait,
 
 1Danza de Escher 1,1952,https://i.ibb.co/LSfRk55/LW331.jpg,30cm*70cm,500€,Acuarela;oil,
 
